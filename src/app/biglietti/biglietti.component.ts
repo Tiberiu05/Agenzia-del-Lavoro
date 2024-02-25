@@ -11,6 +11,9 @@ import { Component } from '@angular/core';
 
 export class BigliettiComponent
 {
+parseInt(_t23: string) {
+throw new Error('Method not implemented.');
+}
   coda: string[] = [];
   operatore1: string[] = [];
   operatore2: string[] = [];
@@ -18,7 +21,7 @@ export class BigliettiComponent
 
   ultimoTicket=0;
   ultimoTicketFormattato='';
-  elementiMaxOperatore=2;
+  elementiMaxOperatore=5;
 
 // ==================================================
 

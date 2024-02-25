@@ -11,13 +11,14 @@
         <div class="pagina">
             <section class="s1">
                 <div class="utenti">
-                    <p>Utenti</p>
+                    <h2>Utenti</h2>
                     <!-- Qui metterò il bottone -->
-                    <button (click)="staccaTicket()">Stacca Ticket</button>
-
-                    <div class="ultimoTicket">
-                        {{ultimoTicketFormattato}}
-                        <!-- Qui deve comparire il numero interpolato {{ ultimoTicketFormattato }} -->
+                        <button (click)="staccaTicket()">Stacca Ticket</button>
+                        <div class="staccaTicket">
+                        <div class="ultimoTicket">
+                            {{ultimoTicketFormattato}}
+                    <!-- Qui deve comparire il numero interpolato {{ ultimoTicketFormattato }} -->
+                        </div>
                     </div>
                 </div>
             </section>
@@ -25,24 +26,25 @@
 
             <section class="s2">
                 <div class="tabellone">
-                    <p>Tabellone</p>
+                    <h2>Tabellone</h2>
 
                     <div class="coda">
                         <div>
                             <h4>Operatore 1</h4>
-                            <p *ngFor="let ticket of operatore1">
-                                {{ticket}}
-                            </p>
+                            <p *ngFor="let ticket of operatore1; let i = index" [ngClass]="{ 'green': i % 2 === 0 }" [ngStyle]="{ 'color': parseInt(ticket) % 2 !== 0 ? 'red' : 'green' }">
+                                {{ ticket }}
+                              </p>
+                              
                         </div>
                         <div>
                             <h4>Operatore 2</h4>
-                            <p *ngFor="let ticket of operatore2">
+                            <p *ngFor="let ticket of operatore2; let i =index" [ngClass]="{'green':(i) % 2 ==0}">
                                 {{ticket}}
                             </p>
                         </div>
                         <div>
                             <h4>Operatore 3</h4>
-                            <p *ngFor="let ticket of operatore3">
+                            <p *ngFor="let ticket of operatore3; let i =index" [ngClass]="{'green':(i) % 2 ==0}">
                                 {{ticket}}
                             </p>
                         </div>
@@ -53,7 +55,7 @@
             <section class="s3">
                 <div class="operatore">
                     <div class="operatore1">
-                        <h2>Operatore 1</h2>
+                        <h3>Operatore 1</h3>
                         <button
                             (click)="gestisciCoda('operatore1')">
                             Gestisci Coda
@@ -61,7 +63,7 @@
                     </div>
 
                     <div class="operatore2">
-                        <h2>Operatore 2</h2>
+                        <h3>Operatore 2</h3>
                         <button
                             (click)="gestisciCoda('operatore2')">
                             Gestisci Coda
@@ -69,7 +71,7 @@
                     </div>
 
                     <div class="operatore3">
-                        <h2>Operatore 3</h2>
+                        <h3>Operatore 3</h3>
                         <button
                             (click)="gestisciCoda('operatore3')">
                             Gestisci Coda
