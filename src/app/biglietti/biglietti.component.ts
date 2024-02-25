@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./biglietti.component.css']
 })
 
-export class BigliettiComponent {
+export class BigliettiComponent
+{
 /* Definisco l'array di tipo String*/
 tabellone:String[]=[];
 coda:String[]=[];
