@@ -8,40 +8,53 @@
 
 <body>
     <h1>Biglietti</h1>
-    <section>
-        <div class="utenti">
-            <p>Qui andranno visualizzati gli utenti</p>
-            <!-- Qui metterò il bottone -->
-            <button (click)="staccaTicket()">Stacca Ticket</button>
+        <div class="pagina">
+            <section>
+                <div class="utenti">
+                    <p>Qui andranno visualizzati gli utenti</p>
+                    <!-- Qui metterò il bottone -->
+                    <button (click)="staccaTicket()">Stacca Ticket</button>
 
-            <div class="ultimoTicket">
-                {{ultimoTicketFormattato}}
-                <!-- Qui deve comparire il numero interpolato {{ ultimoTicketFormattato }} -->
-            </div>
+                    <div class="ultimoTicket">
+                        {{ultimoTicketFormattato}}
+                        <!-- Qui deve comparire il numero interpolato {{ ultimoTicketFormattato }} -->
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="tabellone">
+                    <p>Tabellone</p>
+
+                    <div class="coda">
+                        <p *ngFor="let ticket of tabellone">
+                            {{ticket}}
+                            <!-- Qui dentro ci starà il ciclo foreach per ciclare i ticket -->
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="operatore">
+                    <div class="operatore1">
+                        <h2>Operatore 1</h2>
+                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                    </div>
+
+                    <div class="operatore2">
+                        <h2>Operatore 2</h2>
+                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                    </div>
+
+                    <div class="operatore3">
+                        <h2>Operatore 3</h2>
+                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section>
-        <div class="tabellone">
-            <p>Tabellone</p>
-
-            <div class="coda">
-                <p *ngFor="let ticket of tabellone">
-                    {{ticket}}
-                    <!-- Qui dentro ci starà il ciclo foreach per ciclare i ticket -->
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="operatore">
-            <h2>Operatore</h2>
-            
-            <!-- Questo bottone serve per gestire la coda attraverso la funzione gestisciCoda() -->
-            <button (click)="gestisciCoda()">Gestisci Coda</button>
-        </div>
-    </section>
 
 </body>
 </html>
