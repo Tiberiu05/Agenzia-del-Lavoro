@@ -7,53 +7,92 @@ import { Component } from '@angular/core';
   styleUrls: ['./biglietti.component.css']
 })
 
+
+
 export class BigliettiComponent
 {
-/* Definisco l'array di tipo String*/
-tabellone:String[]=[];
-coda:String[]=[];
+  coda: string[] = [];
+  operatore1: string[] = [];
+  operatore2: string[] = [];
+  operatore3: string[] = [];
 
-ultimoTicket=0;
-ultimoTicketFormattato='';
-elementiMaxTabellone=8;
+  ultimoTicket=0;
+  ultimoTicketFormattato='';
+  elementiMaxOperatore=2;
 
-staccaTicket(){
-  if(this.ultimoTicket < 100)
-    this.ultimoTicket++;
-  else
-    this.ultimoTicket = 1;
+// ==================================================
 
-this.generaTiketFormattato();
-this.aggiungiTicketCoda();
-console.log(this.coda);
-}
+  staccaTicket()
+  {
+    if(this.ultimoTicket < 100)
+      this.ultimoTicket++;
+    else
+      this.ultimoTicket = 1;
 
-private generaTiketFormattato(){
-  let res= this.ultimoTicket.toString();
-  if(this.ultimoTicket<10){
-    res='00'+res
-  }else if(this.ultimoTicket<100){
-    res='0'+res;
-  }
-  this.ultimoTicketFormattato=res;
-}
-
-private aggiungiTicketCoda(){
- this.coda.push(this.ultimoTicketFormattato);
-    
+    this.generaTicketFormattato();
+    this.aggiungiTicketCoda();
+    console.log(this.coda);
   }
 
-gestisciCoda(){
-  const primoElementoCoda=this.coda.shift();
-
-  if(primoElementoCoda!==undefined){
-    this.tabellone.unshift(primoElementoCoda);
-  
+  private generaTicketFormattato()
+  {
+    let res= this.ultimoTicket.toString();
+    if(this.ultimoTicket<10){
+      res='00'+res
+    }else if(this.ultimoTicket<100){
+      res='0'+res;
+    }
+    this.ultimoTicketFormattato=res;
   }
-  if(this.tabellone.length>= this.elementiMaxTabellone){
-    this.tabellone.splice(this.elementiMaxTabellone)
+
+  private aggiungiTicketCoda()
+  {
+    this.coda.push(this.ultimoTicketFormattato);
   }
-}  
 
+// ==================================================
 
+  gestisciCoda(operatore : string)
+  {
+    const primoElementoCoda=this.coda.shift();
+
+    switch(operatore)
+    {
+      case "operatore1" :
+      if(primoElementoCoda!==undefined)
+      {
+        this.operatore1.unshift(primoElementoCoda);
+      }
+
+      if(this.operatore1.length>= this.elementiMaxOperatore)
+      {
+        this.operatore1.splice(this.elementiMaxOperatore)
+      }
+      break;
+
+      case "operatore2" :
+      if(primoElementoCoda!==undefined)
+      {
+        this.operatore2.unshift(primoElementoCoda);
+      }
+
+      if(this.operatore2.length>= this.elementiMaxOperatore)
+      {
+        this.operatore2.splice(this.elementiMaxOperatore)
+      }
+      break;
+
+      case "operatore3" :
+      if(primoElementoCoda!==undefined)
+      {
+        this.operatore3.unshift(primoElementoCoda);
+      }
+
+      if(this.operatore3.length>= this.elementiMaxOperatore)
+      {
+        this.operatore3.splice(this.elementiMaxOperatore)
+      }
+      break;
+    }
+  }
 }

@@ -9,9 +9,9 @@
 <body>
     <h1>Biglietti</h1>
         <div class="pagina">
-            <section>
+            <section class="s1">
                 <div class="utenti">
-                    <p>Qui andranno visualizzati gli utenti</p>
+                    <p>Utenti</p>
                     <!-- Qui metterò il bottone -->
                     <button (click)="staccaTicket()">Stacca Ticket</button>
 
@@ -23,34 +23,57 @@
             </section>
 
 
-            <section>
+            <section class="s2">
                 <div class="tabellone">
                     <p>Tabellone</p>
 
                     <div class="coda">
-                        <p *ngFor="let ticket of tabellone">
-                            {{ticket}}
-                            <!-- Qui dentro ci starà il ciclo foreach per ciclare i ticket -->
-                        </p>
+                        <div>
+                            <h4>Operatore 1</h4>
+                            <p *ngFor="let ticket of operatore1">
+                                {{ticket}}
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Operatore 2</h4>
+                            <p *ngFor="let ticket of operatore2">
+                                {{ticket}}
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Operatore 3</h4>
+                            <p *ngFor="let ticket of operatore3">
+                                {{ticket}}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section>
+            <section class="s3">
                 <div class="operatore">
                     <div class="operatore1">
                         <h2>Operatore 1</h2>
-                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                        <button
+                            (click)="gestisciCoda('operatore1')">
+                            Gestisci Coda
+                        </button>
                     </div>
 
                     <div class="operatore2">
                         <h2>Operatore 2</h2>
-                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                        <button
+                            (click)="gestisciCoda('operatore2')">
+                            Gestisci Coda
+                        </button>
                     </div>
 
                     <div class="operatore3">
                         <h2>Operatore 3</h2>
-                        <button (click)="gestisciCoda()">Gestisci Coda</button>
+                        <button
+                            (click)="gestisciCoda('operatore3')">
+                            Gestisci Coda
+                        </button>
                     </div>
                 </div>
             </section>
