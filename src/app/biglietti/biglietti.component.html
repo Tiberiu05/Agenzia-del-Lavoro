@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietti</title>
 </head>
 <body>
     <h1>Biglietti</h1>
-    <div class="utenti">
-        <p>Qui andranno visualizzati gli utenti</p>
-    </div>
+    <section>
+        <div class="utenti">
+            <p>Qui andranno visualizzati gli utenti</p>
+            <!-- Qui metterò il bottone -->
+            <button (click)="prossimoTicket()">Stacca Ticket</button>
 
+            <div class="ultimoTicket">
+                <!-- Qui deve comparire il numero interpolato {{ ultimoTicketFormattato }} -->
+            </div>
+        </div>
+    </section>
 
+    <section>
+        <div class="tabellone">
+            <p>Tabellone</p>
 
+            <div class="coda">
+                <p *ngFor="let ticket of tabellone">
+                    <!-- Qui dentro ci starà il ciclo foreach per ciclare i ticket -->
+                </p>
+            </div>
+        </div>
+    </section>
 
-    
+    <section>
+        <div>
+            <h2>Operatore</h2>
+            <!-- Questo bottone serve per gestire la coda attraverso la funzione gestisciCoda() -->
+            <button (click)="gestisciCoda()">Gestisci Coda</button>
+        </div>
+    </section>
+
 </body>
 </html>
