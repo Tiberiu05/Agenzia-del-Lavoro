@@ -13,12 +13,15 @@ export class BigliettiComponent
 tabellone:String[]=[];
 coda:String[]=[];
 
-ultimoTicket=0;
+ultimoTicket=90;
 ultimoTicketFormattato='';
-elementiMaxTabellone=10;
+elementiMaxTabellone=5;
 
 staccaTicket(){
-  this.ultimoTicket++;
+  if(this.ultimoTicket < 100)
+    this.ultimoTicket++;
+  else
+    this.ultimoTicket = 1;
 this.generaTiketFormattato();
 this.aggiungiTicketCoda();
 console.log(this.coda);
@@ -41,11 +44,13 @@ private aggiungiTicketCoda(){
 
 gestisciCoda(){
   const primoElementoCoda=this.coda.shift();
+
   if(primoElementoCoda!==undefined){
     this.tabellone.unshift(primoElementoCoda);
   
   }
-  if(this.tabellone.length<= this.elementiMaxTabellone){
+
+  if(this.tabellone.length >= this.elementiMaxTabellone){
     this.tabellone.splice(this.elementiMaxTabellone)
   }
 }  
