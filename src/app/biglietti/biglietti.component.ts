@@ -14,14 +14,16 @@ tabellone:String[]=[];
 coda:String[]=[];
 
 ultimoTicket=0;
+ultimoTicket=0;
 ultimoTicketFormattato='';
-elementiMaxTabellone = 8;
+elementiMaxTabellone=8;
 
 staccaTicket(){
   if(this.ultimoTicket < 100)
     this.ultimoTicket++;
   else
     this.ultimoTicket = 1;
+
 this.generaTiketFormattato();
 this.aggiungiTicketCoda();
 console.log(this.coda);
