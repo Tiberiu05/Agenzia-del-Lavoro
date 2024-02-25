@@ -54,6 +54,9 @@ throw new Error('Method not implemented.');
   }
 
 // ==================================================
+isNumeric(value: any): boolean {
+  return !isNaN(value - parseFloat(value));
+}
 
   gestisciCoda(operatore : string)
   {

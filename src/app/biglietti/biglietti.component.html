@@ -31,7 +31,7 @@
                     <div class="coda">
                         <div>
                             <h4>Operatore 1</h4>
-                            <p *ngFor="let ticket of operatore1; let i = index" [ngClass]="{ 'green': i % 2 === 0 }" [ngStyle]="{ 'color': parseInt(ticket) % 2 !== 0 ? 'red' : 'green' }">
+                            <p *ngFor="let ticket of operatore1; let i = index" [ngClass]="{ 'green': i % 2 === 0 }" >
                                 {{ ticket }}
                               </p>
                               
