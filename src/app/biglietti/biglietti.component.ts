@@ -14,7 +14,6 @@ tabellone:String[]=[];
 coda:String[]=[];
 
 ultimoTicket=0;
-ultimoTicket=0;
 ultimoTicketFormattato='';
 elementiMaxTabellone=8;
 
