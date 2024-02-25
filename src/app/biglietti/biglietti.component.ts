@@ -13,9 +13,9 @@ export class BigliettiComponent
 tabellone:String[]=[];
 coda:String[]=[];
 
-ultimoTicket=90;
+ultimoTicket=0;
 ultimoTicketFormattato='';
-elementiMaxTabellone = 10;
+elementiMaxTabellone = 8;
 
 staccaTicket(){
   if(this.ultimoTicket < 100)
