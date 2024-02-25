@@ -15,7 +15,7 @@ coda:String[]=[];
 
 ultimoTicket=90;
 ultimoTicketFormattato='';
-elementiMaxTabellone=5;
+elementiMaxTabellone = 10;
 
 staccaTicket(){
   if(this.ultimoTicket < 100)
@@ -49,8 +49,7 @@ gestisciCoda(){
     this.tabellone.unshift(primoElementoCoda);
   
   }
-
-  if(this.tabellone.length >= this.elementiMaxTabellone){
+  if(this.tabellone.length>= this.elementiMaxTabellone){
     this.tabellone.splice(this.elementiMaxTabellone)
   }
 }  
