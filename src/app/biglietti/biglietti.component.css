@@ -1,4 +1,4 @@
-/* Reset di default per il layout della pagina */
+
 body, h1, p, button {
     margin: 0;
     padding: 0;
@@ -8,15 +8,20 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f2f2f2;
 }
+.pagina {
+    display: flex;
+    width: 90vw;
+    margin: auto;
+    gap: 1rem;
+}
 
-/* Stile per l'header */
 h1 {
     color: #333;
     text-align: center;
     margin: 20px 0;
 }
 
-/* Stile per la sezione degli utenti */
+
 .utenti {
     background-color: #fff;
     padding: 20px;
@@ -35,10 +40,16 @@ button {
 }
 
 .ultimoTicket {
+    border: 1px solid black;
+    width: 80%;
     margin-top: 15px;
+    aspect-ratio: 2/1;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
 }
 
-/* Stile per la sezione del tabellone */
 .tabellone {
     background-color: #fff;
     padding: 20px;
@@ -51,12 +62,10 @@ button {
     margin-bottom: 10px;
 }
 
-/* Stile per la sezione dell'operatore */
 h2 {
     color: #333;
 }
 
-/* Stile per il bottone dell'operatore */
 button {
     background-color: #28a745;
     color: #fff;
@@ -76,4 +85,3 @@ button {
     margin-bottom: 20px;
 }
 
-/* Aggiungi altri stili secondo le tue esigenze */
